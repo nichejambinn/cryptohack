@@ -17,12 +17,12 @@ def extended_gcd(a, b):
         old_s, s = s, old_s - quotient * s
         old_t, t = t, old_t - quotient * t
 
-    return old_s, old_t # Bézout coefficients
+    return old_r, old_s, old_t # Bézout coefficients
 
 
 
 if __name__=="__main__":
     a = 26513
     b = 32321
-    u,v = extended_gcd(a, b)
-    
+    c,u,v = extended_gcd(a, b)
+    print(c == gcd(a,b))
